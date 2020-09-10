@@ -8,7 +8,7 @@ const {EmailEvent} = require('../lib/emailEvent');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.send("Express");
 });
 
 router.post('/email',(req,res,next)=>{
