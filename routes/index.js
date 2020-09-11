@@ -11,11 +11,11 @@ router.get('/', function(req, res, next) {
   res.send("Express");
 });
 
-router.post('/email',(req,res,next)=>{
+router.get('/product',async (req,res,next)=>{
     console.log(req.body)
 
-    
-    res.json({status:true});
+    let product = await ProductModel.find().sort({_id:-1}).limit(1);
+    res.json({product,status:true});
 })
 
 router.get('/events',async (req,res,next)=>{
